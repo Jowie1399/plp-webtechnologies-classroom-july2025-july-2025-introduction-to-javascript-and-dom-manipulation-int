@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JS Project — Parts 1-4</title>
+  <meta name="description" content="Project demonstrating JS variables, conditionals, functions, loops, and DOM interactions." />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1>JavaScript Project: Variables, Functions, Loops & DOM</h1>
+      <p class="subtitle">A small interactive page demonstrating the requested JS features.</p>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <!-- Part 1: Variables & Conditionals -->
+    <section id="part1" aria-labelledby="part1-heading">
+      <h2 id="part1-heading">Part 1 — Variables & Conditionals</h2>
+      <p>Enter your name and age; the script will check membership eligibility.</p>
+
+      <form id="user-form" aria-describedby="form-desc">
+        <p id="form-desc">Provide a name and age (age must be a number). Click <strong>Check</strong>.</p>
+
+        <label for="name-input">Full name</label>
+        <input id="name-input" name="name" type="text" placeholder="Jane Doe" autocomplete="name">
+
+        <label for="age-input">Age</label>
+        <input id="age-input" name="age" type="number" min="0" max="120" placeholder="e.g. 25" autocomplete="bday">
+
+        <div class="form-actions">
+          <button id="check-btn" type="button">Check</button>
+          <button id="clear-btn" type="button">Clear</button>
+        </div>
+      </form>
+
+      <div id="part1-output" class="output" aria-live="polite"></div>
+    </section>
+
+    <!-- Part 2: Functions (and a list to manipulate) -->
+    <section id="part2" aria-labelledby="part2-heading">
+      <h2 id="part2-heading">Part 2 — Custom Functions</h2>
+      <p>Use the controls to add / remove items from the task list. Two functions handle creation & deletion.</p>
+
+      <label for="item-input">New task</label>
+      <input id="item-input" type="text" placeholder="Write a task and click Add">
+
+      <div class="form-actions">
+        <button id="add-btn" type="button">Add task</button>
+        <button id="remove-last-btn" type="button">Remove last</button>
+      </div>
+
+      <h3>Tasks</h3>
+      <ul id="tasks" aria-live="polite">
+        <!-- List populated by script (loops + functions) -->
+      </ul>
+    </section>
+
+    <!-- Part 3: Loops (examples visible through auto-populate and counting) -->
+    <section id="part3" aria-labelledby="part3-heading">
+      <h2 id="part3-heading">Part 3 — Loop Examples</h2>
+      <p>Click the buttons to populate sample items using different loop types.</p>
+
+      <div class="form-actions">
+        <button id="populate-for-btn" type="button">Populate (for loop)</button>
+        <button id="populate-while-btn" type="button">Populate (while loop)</button>
+      </div>
+
+      <div id="loop-output" class="output" aria-live="polite"></div>
+    </section>
+
+    <!-- Part 4: DOM Interactions -->
+    <section id="part4" aria-labelledby="part4-heading">
+      <h2 id="part4-heading">Part 4 — DOM Interactions</h2>
+      <p>This section demonstrates at least three DOM interactions: text update, class toggle (theme), and list manipulation.</p>
+
+      <div class="controls">
+        <button id="greet-btn" type="button">Show Greeting</button>
+        <button id="toggle-theme-btn" type="button">Toggle Theme</button>
+      </div>
+
+      <div id="greeting" class="output" aria-live="polite"></div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="container">
+      <small>&copy; 2025 JS Project — Demo</small>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
