@@ -1,0 +1,84 @@
+/* style.css — small responsive stylesheet for the demo project */
+
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: #222;
+  background: #f5f7fb;
+  line-height: 1.5;
+  padding: 18px;
+}
+
+/* Container to center content and limit width */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+/* Header */
+.site-header { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
+.site-header h1 { color: #0b74d1; font-size: 1.25rem; }
+.subtitle { color: #666; font-size: 0.95rem; margin-top: 6px; }
+
+/* Sections */
+main > section { background: #fff; padding: 14px; border-radius: 8px; margin-top: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+h2 { margin-bottom: 10px; color: #0b74d1; }
+
+/* Form & inputs */
+label { display: block; margin-top: 10px; font-weight: 600; font-size: 0.95rem; }
+input[type="text"], input[type="number"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+.form-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #0b74d1;
+  color: white;
+  font-weight: 700;
+}
+button[type="reset"], #remove-last-btn { background: #777; }
+
+/* Outputs & lists */
+.output { margin-top: 12px; padding: 10px; border-radius: 6px; background: #f0f6ff; color: #123; }
+#tasks { margin-top: 10px; list-style: disc; padding-left: 20px; }
+#tasks li { margin-bottom: 8px; }
+
+/* Theme toggled class */
+.theme-dark {
+  background: #0f1724;
+  color: #e6eef8;
+}
+.theme-dark .site-header { background: #071023; }
+.theme-dark button { background: #0bbfae; color: #022; }
+.theme-dark input, .theme-dark textarea { background: #0b1b2b; color: #e6eef8; border-color: #123; }
+
+/* Responsive: two-column layout on wider screens using CSS Grid */
+@media (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  /* Make the hero / longer sections span both columns (if needed) */
+  #part1 { grid-column: 1 / -1; }
+  #part3 { grid-column: 1 / -1; }
+}
+
+/* Small-screen tweaks */
+@media (max-width: 480px) {
+  .form-actions { flex-direction: column; }
+  button { width: 100%; }
+}
